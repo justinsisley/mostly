@@ -1,0 +1,10 @@
+# Directories
+coverage
+dist
+node_modules
+
+# Files
+*.log
+.DS_Store
+package-lock.json
+yarn.lock

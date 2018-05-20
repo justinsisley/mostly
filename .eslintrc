@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": "airbnb",
+  "globals": {
+    "beforeAll": true,
+    "beforeEach": true,
+    "describe": true,
+    "document": true,
+    "expect": true,
+    "it": true,
+    "jest": true,
+    "page": true,
+    "test": true,
+    "window": true
+  }
+}

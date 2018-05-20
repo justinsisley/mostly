@@ -1,0 +1,1 @@
+rm -rf coverage dist node_modules package-lock.json

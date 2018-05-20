@@ -1,0 +1,40 @@
+.label {
+  display: block;
+  margin-bottom: 25px;
+  font-size: 13px;
+}
+
+.input,
+.button {
+  padding: 10px 15px;
+  border: 1px solid #eee;
+  border-radius: 2px;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.input.error,
+.input.error:focus {
+  border: 1px solid rgb(229, 57, 123);
+}
+
+.button {
+  background: #eee;
+  color: #333;
+}
+
+.input:focus,
+.button:focus {
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input:disabled,
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

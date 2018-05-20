@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest-browsers
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run lint
+      - run: npm run test:unit
+      - run: npm run test:func
+      - run: npm run test:e2e
+      - run: npm run deploy

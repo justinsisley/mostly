@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  padding: 60px 80px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.message {
+  margin-bottom: 25px;
+}
