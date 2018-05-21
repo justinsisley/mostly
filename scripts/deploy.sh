@@ -1,8 +1,6 @@
 # These values will determine your now.sh hostname
 # For example: https://{NOW_SUBDOMAIN}.now.sh
-APP_NAME=mostly
-APP_ENV=staging
-NOW_SUBDOMAIN="$APP_NAME-$APP_ENV"
+NOW_SUBDOMAIN="mostly"
 
 #
 # You generally won't need to change anything below this line unless you begin
