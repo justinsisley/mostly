@@ -88,7 +88,7 @@ Run the application in development mode:
 npm run dev
 ```
 
-> __Note:__ The dev server runs on port 3320 by default. Feel free to change it in `scripts/config/webpack.dev.js`.
+> __Note:__ The dev server runs on port _3320_ by default. Feel free to change it in `scripts/config/webpack.dev.js`.
 
 ## Test
 
@@ -140,7 +140,7 @@ npm run test:unit -- --watch
 npm run test:func -- --watch
 ```
 
-> __Note__: This option is simply passing the `watch` option directly to Jest. End-to-end tests do __not__ support the "watch" option.
+> __Note__: This option is simply passing the `watch` option directly to Jest. End-to-end tests do __not__ support the `watch` option.
 
 Run the unit test suite and generate a coverage report:
 
@@ -148,7 +148,7 @@ Run the unit test suite and generate a coverage report:
 npm run test:unit -- --coverage
 ```
 
-> __Note__: Like `watch`, this option is passing the `coverage` option directly to Jest. Functional and end-to-end tests do __not__ support the "coverage" option.
+> __Note__: Like `watch`, this option is passing the `coverage` option directly to Jest. Functional and end-to-end tests do __not__ support the `coverage` option.
 
 ## Build
 
@@ -184,7 +184,7 @@ Deploy to [now.sh](https://zeit.co/now):
 npm run deploy
 ```
 
-> __Note:__ [now.sh](https://zeit.co/now) is one of the quickest and easiest ways to get your app deployed. Regardless, like every other part of this starter kit, I encourage you to modify `deploy.sh` to suit your needs.
+> __Note:__ [now.sh](https://zeit.co/now) is one of the quickest and easiest ways to get your app deployed. It also offers a free plan. Nevertheless, like every other part of this starter kit, I encourage you to modify `deploy.sh` to suit your needs.
 
 ## Pre-commit Hook
 
