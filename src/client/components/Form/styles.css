@@ -1,40 +1,42 @@
-.label {
-  display: block;
-  margin-bottom: 25px;
-  font-size: 13px;
-}
-
 .input,
 .button {
-  padding: 10px 15px;
-  border: 1px solid #eee;
+  padding: 12px 15px;
   border-radius: 2px;
+  font-size: 15px;
+}
+
+.button {
+  min-width: 120px;
+  border-color: #007bff;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.label {
+  display: block;
+  margin-bottom: 20px;
 }
 
 .input {
   display: block;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 8px;
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
 }
 
-.input.error,
+.input.error {
+  border-color: #dc3545;
+}
+
 .input.error:focus {
-  border: 1px solid rgb(229, 57, 123);
-}
-
-.button {
-  background: #eee;
-  color: #333;
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
 }
 
 .input:focus,
 .button:focus {
-  border: 1px solid #ccc;
+  border-color: transparent;
   outline: none;
-}
-
-.input:disabled,
-.button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }

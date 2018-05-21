@@ -6,10 +6,7 @@
 }
 
 .card {
-  padding: 60px 80px;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  width: 250px;
 }
 
 .message {

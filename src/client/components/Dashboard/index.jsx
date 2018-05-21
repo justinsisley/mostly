@@ -7,6 +7,8 @@ function Dashboard(props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
+        <h1>Dashboard</h1>
+
         <div className={styles.message}>
           Logged in as <strong>{props.username}</strong>
         </div>

@@ -37,6 +37,7 @@ export function Input(props) {
         <input
           id={props.label}
           type="text"
+          placeholder="Username"
           onChange={props.onChange}
           className={`${styles.input} ${props.error ? styles.error : ''}`}
         />

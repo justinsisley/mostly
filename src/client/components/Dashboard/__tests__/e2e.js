@@ -9,6 +9,10 @@ describe('Dashboard', () => {
     await expect(page).toMatch('Logged in as ExampleUsername');
   });
 
+  it('should display "Dashboard" text on page', async () => {
+    await expect(page).toMatch('Dashboard');
+  });
+
   it('should have a "Log Out" button', async () => {
     await expect(page).toMatchElement('button', { text: 'Log Out' });
   });
