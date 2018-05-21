@@ -1,4 +1,4 @@
-# These values will determine your now.sh hostname
+# This values will determine your now.sh hostname
 # For example: https://{NOW_SUBDOMAIN}.now.sh
 NOW_SUBDOMAIN="mostly"
 
