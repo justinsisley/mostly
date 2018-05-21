@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { Button, Input } from '../Form';
 import styles from './styles.css';
 
 class Login extends React.Component {
   static propTypes = {
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }).isRequired,
     loggedIn: PropTypes.bool.isRequired,
     logIn: PropTypes.func.isRequired,
   };
@@ -16,12 +14,6 @@ class Login extends React.Component {
     username: '',
     error: false,
   };
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/dashboard');
-    }
-  }
 
   onEmailChange = (e) => {
     this.setState({
@@ -42,6 +34,8 @@ class Login extends React.Component {
   };
 
   render() {
+    if (this.props.loggedIn) return <Redirect to="/dashboard" />;
+
     return (
       <div className={styles.wrapper}>
         <form onSubmit={this.onSubmit} className={styles.form}>
