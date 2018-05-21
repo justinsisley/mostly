@@ -14,4 +14,4 @@ NOW_DEPLOY_ID=$( now --public --no-clipboard --token=$NOW_TOKEN )
 now alias $NOW_DEPLOY_ID "$NOW_SUBDOMAIN" --token=$NOW_TOKEN
 
 # Remove any unaliased deployments, and always exit successfully
-now rm $APP_NAME --safe --yes --token=$NOW_TOKEN || exit 0
+now rm $NOW_SUBDOMAIN --safe --yes --token=$NOW_TOKEN || exit 0
