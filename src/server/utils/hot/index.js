@@ -1,6 +1,6 @@
 import path from 'path';
 
-const serverDir = path.join(__dirname, '../');
+const serverDir = path.join(__dirname, '../../');
 
 function start() {
   // Require chokidar just in time so it can be a devDependency
