@@ -20,7 +20,7 @@ NOW_DEPLOY_ID=$( now --public --no-clipboard --token=$NOW_TOKEN )
 now alias $NOW_DEPLOY_ID "$NOW_SUBDOMAIN" --token=$NOW_TOKEN
 
 # Scale the deployment
-now scale "$NOW_SUBDOMAIN.now.sh" $MIN_INSTANCES $MAX_INSTANCES
+now scale "$NOW_SUBDOMAIN.now.sh" $MIN_INSTANCES $MAX_INSTANCES --token=$NOW_TOKEN
 
 # Remove any unaliased deployments, and always exit successfully
 now rm $NOW_SUBDOMAIN --safe --yes --token=$NOW_TOKEN || exit 0
