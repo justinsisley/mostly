@@ -35,11 +35,11 @@ export function Input(props) {
         {props.label}
 
         <input
-          id={props.label}
-          type="text"
-          placeholder="Username"
-          onChange={props.onChange}
           className={`${styles.input} ${props.error ? styles.error : ''}`}
+          id={props.label}
+          onChange={props.onChange}
+          placeholder={props.label}
+          type="text"
         />
       </label>
     </React.Fragment>
