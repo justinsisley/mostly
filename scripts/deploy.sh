@@ -18,7 +18,7 @@ REGIONS="sfo"
 #
 
 # Deploy and get the deployment ID
-NOW_DEPLOY_ID=$( now --public --no-clipboard --regions $REGIONS --token=$NOW_TOKEN )
+NOW_DEPLOY_ID=$( now --public --no-clipboard --regions=$REGIONS --token=$NOW_TOKEN )
 
 # Create an alias with the new deployment ID
 now alias $NOW_DEPLOY_ID "$NOW_SUBDOMAIN" --token=$NOW_TOKEN
