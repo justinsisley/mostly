@@ -8,10 +8,17 @@ NOW_SUBDOMAIN="mostly"
 MIN_INSTANCES=1
 MAX_INSTANCES=1
 
+# This value will determine the regions your application will deploy to
+# https://zeit.co/docs/features/scaling#scaling-while-deploying
+REGIONS="sfo"
+
 #
 # You generally won't need to change anything below this line unless you begin
 # using a custom domain name for your deployment or
 #
+
+# Set the regions for this deployment
+now --regions $REGIONS --token=$NOW_TOKEN
 
 # Deploy and get the deployment ID
 NOW_DEPLOY_ID=$( now --public --no-clipboard --token=$NOW_TOKEN )
@@ -19,8 +26,8 @@ NOW_DEPLOY_ID=$( now --public --no-clipboard --token=$NOW_TOKEN )
 # Create an alias with the new deployment ID
 now alias $NOW_DEPLOY_ID "$NOW_SUBDOMAIN" --token=$NOW_TOKEN
 
-# Scale the deployment
-now scale "$NOW_SUBDOMAIN.now.sh" $MIN_INSTANCES $MAX_INSTANCES --token=$NOW_TOKEN
+# Remove any unaliased deployments
+now rm $NOW_SUBDOMAIN --safe --yes --token=$NOW_TOKEN
 
-# Remove any unaliased deployments, and always exit successfully
-now rm $NOW_SUBDOMAIN --safe --yes --token=$NOW_TOKEN || exit 0
+# Scale the deployment and always exit successfully
+now scale "$NOW_SUBDOMAIN.now.sh" $MIN_INSTANCES $MAX_INSTANCES --token=$NOW_TOKEN || exit 0
