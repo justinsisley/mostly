@@ -18,13 +18,13 @@ if (isProd) {
   app.use('/api', api);
   app.use(express.static('dist/client'));
 
-  // Send index.html for all unhandled requests
+  // Send index.html for all unhandled non-API requests
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/index.html'));
   });
 } else {
-  // Handle API endpoints in a "hot-reloading" friendly way by requiring a
-  // fresh module on every request.
+  // In non-production environments, handle API endpoints in a "hot-reloading"
+  // friendly way by requiring a fresh `api.js` module on every API request.
   app.use('/api', (req, res, next) => {
     // eslint-disable-next-line global-require
     require('./api').default(req, res, next);
@@ -34,7 +34,7 @@ if (isProd) {
   hot.start();
 }
 
-// Global error handling
+// Global error handling for uncaught errors
 app.use(handleErrors);
 
 // Start the server
