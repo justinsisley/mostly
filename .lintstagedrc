@@ -4,8 +4,8 @@
     "eslint --ignore-pattern /dist/ --fix ./",
     "git add"
   ],
-  "*.{json,css}": [
-    "prettier --print-width 120 --write",
+  "*.{css,json}": [
+    "prettier --write",
     "git add"
   ]
 }

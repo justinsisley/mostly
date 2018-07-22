@@ -36,6 +36,8 @@ export class AuthProvider extends React.Component {
   };
 
   render() {
+    const { children } = this.props;
+
     return (
       <AuthContext.Provider
         // Determine which data/methods will be provided to the Consumer
@@ -45,7 +47,7 @@ export class AuthProvider extends React.Component {
           logOut: this.logOut,
         }}
       >
-        {this.props.children}
+        {children}
       </AuthContext.Provider>
     );
   }
@@ -56,8 +58,7 @@ export function withAuth(Component) {
   return function LoggedInComponent(props) {
     return (
       <AuthConsumer>
-        {auth =>
-          (auth.loggedIn ? <Component {...props} /> : <Redirect to="/login" />)
+        {auth => (auth.loggedIn ? <Component {...props} /> : <Redirect to="/login" />)
         }
       </AuthConsumer>
     );
@@ -69,12 +70,9 @@ export function withoutAuth(Component) {
   return function LoggedOutComponent(props) {
     return (
       <AuthConsumer>
-        {auth =>
-          (auth.loggedIn ? (
-            <Redirect to="/dashboard" />
-          ) : (
-            <Component {...props} />
-          ))
+        {auth => (auth.loggedIn
+          ? <Redirect to="/dashboard" />
+          : <Component {...props} />)
         }
       </AuthConsumer>
     );

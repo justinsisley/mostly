@@ -11,8 +11,11 @@ export const RouterConsumer = RouterContext.Consumer;
 // Create and export a Provider component
 function Provider(props) {
   const { children, ...rest } = props;
+
   return (
-    <RouterContext.Provider value={rest}>{children}</RouterContext.Provider>
+    <RouterContext.Provider value={rest}>
+      {children}
+    </RouterContext.Provider>
   );
 }
 

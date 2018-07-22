@@ -25,29 +25,39 @@ class Login extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    if (!this.state.username) {
+    const { logIn } = this.props;
+    const { username } = this.state;
+
+    if (!username) {
       this.setState({ error: true });
       return;
     }
 
-    this.props.logIn(this.state.username);
+    logIn(username);
   };
 
   render() {
-    if (this.props.loggedIn) return <Redirect to="/dashboard" />;
+    const { loggedIn } = this.props;
+    const { error } = this.state;
+
+    if (loggedIn) return <Redirect to="/dashboard" />;
 
     return (
       <div className={styles.wrapper}>
         <form onSubmit={this.onSubmit} className={styles.form}>
-          <h1>Log In</h1>
+          <h1>
+            Log In
+          </h1>
 
           <Input
             label="Username"
             onChange={this.onEmailChange}
-            error={this.state.error}
+            error={error}
           />
 
-          <Button onClick={this.onSubmit}>Continue</Button>
+          <Button onClick={this.onSubmit}>
+            Continue
+          </Button>
         </form>
       </div>
     );

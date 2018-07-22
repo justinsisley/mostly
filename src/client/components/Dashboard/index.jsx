@@ -3,17 +3,25 @@ import PropTypes from 'prop-types';
 import { Button } from '../Form';
 import styles from './styles.css';
 
-function Dashboard(props) {
+function Dashboard({ username, logOut }) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
-        <h1>Dashboard</h1>
+        <h1>
+          Dashboard
+        </h1>
 
         <div className={styles.message}>
-          Logged in as <strong>{props.username}</strong>
+          Logged in as
+          {' '}
+          <strong>
+            {username}
+          </strong>
         </div>
 
-        <Button onClick={props.logOut}>Log Out</Button>
+        <Button onClick={logOut}>
+          Log Out
+        </Button>
       </div>
     </div>
   );
