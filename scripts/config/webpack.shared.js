@@ -39,7 +39,6 @@ module.exports = {
           loader: 'css-loader',
           options: {
             paths: [nodeModules],
-            minimize: isPrd,
           },
         },
       ],
@@ -55,7 +54,6 @@ module.exports = {
           loader: 'css-loader',
           options: {
             modules: true,
-            minimize: isPrd,
           },
         },
       ],
