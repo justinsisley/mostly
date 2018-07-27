@@ -6,7 +6,7 @@ import styles from './styles.css';
 
 class Login extends React.Component {
   static propTypes = {
-    loggedIn: PropTypes.bool.isRequired,
+    token: PropTypes.string.isRequired,
     logIn: PropTypes.func.isRequired,
   };
 
@@ -37,10 +37,10 @@ class Login extends React.Component {
   };
 
   render() {
-    const { loggedIn } = this.props;
+    const { token } = this.props;
     const { error } = this.state;
 
-    if (loggedIn) return <Redirect to="/dashboard" />;
+    if (token) return <Redirect to="/dashboard" />;
 
     return (
       <div className={styles.wrapper}>

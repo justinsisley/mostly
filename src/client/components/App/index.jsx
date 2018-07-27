@@ -1,19 +1,17 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from '../../contexts/auth';
-import { RouterProvider } from '../../contexts/router';
+import { Provider as ReduxProvider } from 'react-redux';
+import store from '../../store';
 import Router from '../Router';
 
 function App() {
   return (
-    <BrowserRouter>
-      <RouterProvider>
-        <AuthProvider>
-          <Router />
-        </AuthProvider>
-      </RouterProvider>
-    </BrowserRouter>
+    <ReduxProvider store={store}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ReduxProvider>
   );
 }
 

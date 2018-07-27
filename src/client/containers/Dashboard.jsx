@@ -1,9 +1,17 @@
-import React from 'react';
-import { AuthConsumer } from '../contexts/auth';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as sessionActions from '../store/session';
 import Dashboard from '../components/Dashboard';
 
-export default () => (
-  <AuthConsumer>
-    {auth => <Dashboard {...auth} />}
-  </AuthConsumer>
-);
+const mapStateToProps = state => ({
+  ...state.session,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  ...sessionActions,
+}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Dashboard);

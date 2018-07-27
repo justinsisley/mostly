@@ -1,11 +1,11 @@
 import { Router } from 'express';
 import { catchErrors, handleNotFound } from './utils/errors';
-import usersHandler from './controllers/users';
+import sessionHandler from './controllers/session';
 
 const router = Router();
 
-// Example path for `/api/users`
-router.get('/users', catchErrors(usersHandler));
+// Example API to create a new session token
+router.post('/session', catchErrors(sessionHandler));
 
 // Handle calls to non-existent API paths
 router.use('*', handleNotFound);

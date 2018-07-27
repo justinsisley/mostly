@@ -1,1 +1,1 @@
-jest src\/[^_]+\/__tests__\/unit.js $1 --collectCoverageFrom="src/{client,server}/**/*.js"
+jest src\/[^_]+\/__tests__\/unit.js $1 --collectCoverageFrom="src/{client,server}/**/*.js" --testURL="http://localhost"
