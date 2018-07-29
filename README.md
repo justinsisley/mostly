@@ -258,6 +258,12 @@ Absolutely. It's quite likely that there are better libraries than what this pro
 
 If your suggestion truly improves and/or simplifies this project, there's a strong guarantee it will make the cut.
 
+### Where's the Redux version?
+
+There's a [redux branch](https://github.com/justinsisley/mostly/tree/redux), but in addition to [redux](https://github.com/reduxjs/redux), it uses [react-redux](https://github.com/reduxjs/react-redux), [redux-thunk](https://github.com/reduxjs/redux-thunk), and [redux-actions](https://github.com/redux-utilities/redux-actions), so it's a bit more opinionated in library choice, architecture, and configuration.
+
+It's also configured to use [Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension), which can be quite useful during development and debugging.
+
 ### Why isn't there a CLI? Everything should have a CLI.
 
 For this project, I just don't think it's necessary. The [install steps](#install) are relatively simple, and three shell commands get you the most up-to-date starter kit checked out in a brand new repository.
