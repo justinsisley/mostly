@@ -74,5 +74,61 @@
     "webpack": "4.16.3",
     "webpack-cli": "3.1.0",
     "webpack-dev-server": "3.1.5"
+  },
+  "config": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react",
+      "stage-0"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-optional-chaining",
+      "@babel/plugin-transform-runtime",
+      "react-hot-loader/babel",
+      "syntax-trailing-function-commas",
+      "transform-async-to-generator"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "extends": "airbnb",
+    "globals": {
+      "beforeAll": true,
+      "beforeEach": true,
+      "describe": true,
+      "document": true,
+      "expect": true,
+      "it": true,
+      "jest": true,
+      "page": true,
+      "test": true,
+      "window": true
+    }
+  },
+  "eslintIgnore": [
+    "coverage/**",
+    "dist/**"
+  ],
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --ignore-pattern /dist/ --fix ./",
+      "git add"
+    ],
+    "*.{css,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

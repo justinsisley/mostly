@@ -7,14 +7,16 @@ const middleware = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f,
 );
 
-const store = createStore(rootReducer, middleware);
+export default function configureStore() {
+  const store = createStore(rootReducer, middleware);
 
-if (module.hot) {
-  // Enable Webpack hot module replacement for reducers
-  module.hot.accept('./reducers', () => {
-    const nextRootReducer = require('./reducers').default; // eslint-disable-line
-    store.replaceReducer(nextRootReducer);
-  });
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('./reducers', () => {
+      const nextRootReducer = require('./reducers').default; // eslint-disable-line
+      store.replaceReducer(nextRootReducer);
+    });
+  }
+
+  return store;
 }
-
-export default store;
