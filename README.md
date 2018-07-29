@@ -31,6 +31,7 @@ __Nothing is hidden, nothing is magical__, and all of the "plumbing" is accessib
 - [Features](#features)
 - [Documentation](#documentation)
   - [Install](#install)
+  - [Configuration](#configuration)
   - [Develop](#develop)
   - [Test](#test)
     - [Unit Tests](#unit-tests)
@@ -79,6 +80,14 @@ Install dependencies:
 ```bash
 $ npm install
 ```
+
+## Configuration
+
+Configurations for __Babel__, __ESLint__, __lint-staged__, and __prettier__ are contained within the `package.json` file.
+
+Configurations for __Webpack__ can be found in the `scripts/config` directory.
+
+Configuration for __CircleCI__ is contained in the `.circleci/config.yml` file.
 
 ## Develop
 
@@ -190,7 +199,7 @@ npm run deploy
 
 This starter kit is pre-configured with a [git pre-commit hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks), which will automatically clean up your staged code using [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/), then execute your unit and functional tests. This is done using [lint-staged](https://github.com/okonet/lint-staged) and [husky](https://github.com/typicode/husky).
 
-You can modify the pre-commit workflow using the `.lintstagedrc` and `scripts/precommit.sh` files.
+You can modify the pre-commit workflow using the `lint-staged` property in `package.json` and the `scripts/precommit.sh` file.
 
 ## Continuous Delivery
 
