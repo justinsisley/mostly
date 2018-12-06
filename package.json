@@ -16,8 +16,7 @@
     "build": "sh ./scripts/build.sh",
     "deploy": "sh ./scripts/deploy.sh",
     "start": "sh ./scripts/prod.sh",
-    "clean": "sh ./scripts/clean.sh",
-    "precommit": "sh ./scripts/precommit.sh"
+    "clean": "sh ./scripts/clean.sh"
   },
   "dependencies": {
     "@babel/runtime": "7.2.0",
@@ -117,5 +116,10 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "sh ./scripts/precommit.sh"
+    }
   }
 }
