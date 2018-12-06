@@ -6,8 +6,6 @@
   "private": true,
   "scripts": {
     "dev": "sh ./scripts/dev.sh",
-    "dev:client": "sh ./scripts/devClient.sh",
-    "dev:server": "sh ./scripts/devServer.sh",
     "test": "sh ./scripts/test.sh",
     "test:unit": "sh ./scripts/testUnit.sh",
     "test:func": "sh ./scripts/testFunc.sh",

@@ -1,1 +1,1 @@
-concurrently --kill-others --raw "npm run dev:server" "npm run dev:client"
+concurrently --kill-others --raw "sh ./scripts/devServer.sh" "sh ./scripts/devClient.sh"
