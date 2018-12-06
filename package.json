@@ -81,9 +81,6 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "parserOptions": {
-      "sourceType": "module"
-    },
     "extends": "airbnb",
     "globals": {
       "beforeAll": true,
