@@ -14,7 +14,7 @@ REGIONS="sfo"
 
 #
 # You generally won't need to change anything below this line unless you begin
-# using a custom domain name for your deployment or
+# using a custom domain name for your deployment
 #
 
 # Deploy and get the deployment ID
