@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const clientDist = path.join(__dirname, '../../dist/client');
-const nodeModules = path.join(__dirname, '../../node_modules');
 const clientIndexHtml = path.join(__dirname, '../../src/client/index.html');
 const favicon = path.join(__dirname, '../../src/client/favicon.png');
 
@@ -34,15 +33,7 @@ module.exports = {
     {
       test: /\.css$/,
       include: /node_modules/,
-      use: [
-        styleLoader,
-        {
-          loader: 'css-loader',
-          options: {
-            paths: [nodeModules],
-          },
-        },
-      ],
+      use: [styleLoader, 'css-loader'],
     },
 
     // Load local CSS modules from src
